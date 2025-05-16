@@ -1,0 +1,49 @@
+<label for="cameraInput" class="cameraButton"> Upload </label>
+<input type="file" accept="image*/" id="cameraInput">
+<img id="imagePreview" style="display:none;" width="200" alt="Image preview">
+<script>
+  document.getElementById('cameraInput').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+      const img = document.getElementById('imagePreview');
+      img.src = URL.createObjectURL(file);
+      img.style.display = 'block';
+    }
+  });
+</script>
+<style>
+  body {
+
+    background-color: black;
+    text-align: center;
+
+  }
+
+  input {
+
+    display: none;
+
+  }
+
+  .cameraButton {
+
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 700px;
+    background-color: blue;
+    color: black;
+    font-size: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  }
+
+  img {
+
+    margin-top: -700px;
+    margin-left: 300px;
+
+  }
+</style>
